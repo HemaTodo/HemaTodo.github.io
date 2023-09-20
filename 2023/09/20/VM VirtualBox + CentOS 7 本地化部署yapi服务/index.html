@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Oracle VM VirtualBox + CentOS 7 本地化部署Yapi服务 | Hey,Hema - Blog</title><meta name="author" content="Hema"><meta name="copyright" content="Hema"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一、安装Oracle VM VirtualBox1.VirtualBox下载地址：https:&#x2F;&#x2F;www.virtualbox.org&#x2F;wiki&#x2F;Downloads  2.按需选择系统版本安装，安装完成后启动。  3.安装VirtualBox插件，双击下载文件即可安装  二、创建CentOS虚拟机1.选择无界面版本，下载地址：http:&#x2F;&#x2F;mirrors.jlu.edu.cn&#x2F;centos&#x2F;7.9">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle VM VirtualBox + CentOS 7 本地化部署Yapi服务">
+<meta property="og:url" content="https://hematodo.github.io/2023/09/20/VM%20VirtualBox%20+%20CentOS%207%20%E6%9C%AC%E5%9C%B0%E5%8C%96%E9%83%A8%E7%BD%B2yapi%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:site_name" content="Hey,Hema - Blog">
+<meta property="og:description" content="一、安装Oracle VM VirtualBox1.VirtualBox下载地址：https:&#x2F;&#x2F;www.virtualbox.org&#x2F;wiki&#x2F;Downloads  2.按需选择系统版本安装，安装完成后启动。  3.安装VirtualBox插件，双击下载文件即可安装  二、创建CentOS虚拟机1.选择无界面版本，下载地址：http:&#x2F;&#x2F;mirrors.jlu.edu.cn&#x2F;centos&#x2F;7.9">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-09-20T10:27:14.000Z">
+<meta property="article:modified_time" content="2023-09-20T10:33:03.337Z">
+<meta property="article:author" content="Hema">
+<meta property="article:tag" content="Python, 编程技术，Hackintosh，黑苹果">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hematodo.github.io/2023/09/20/VM%20VirtualBox%20+%20CentOS%207%20%E6%9C%AC%E5%9C%B0%E5%8C%96%E9%83%A8%E7%BD%B2yapi%E6%9C%8D%E5%8A%A1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Oracle VM VirtualBox + CentOS 7 本地化部署Yapi服务',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-20 18:33:03'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hey,Hema - Blog"><span class="site-name">Hey,Hema - Blog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Oracle VM VirtualBox + CentOS 7 本地化部署Yapi服务</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-20T10:27:14.000Z" title="发表于 2023-09-20 18:27:14">2023-09-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-20T10:33:03.337Z" title="更新于 2023-09-20 18:33:03">2023-09-20</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Oracle VM VirtualBox + CentOS 7 本地化部署Yapi服务"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="一、安装Oracle-VM-VirtualBox"><a href="#一、安装Oracle-VM-VirtualBox" class="headerlink" title="一、安装Oracle VM VirtualBox"></a>一、安装Oracle VM VirtualBox</h2><p>1.VirtualBox下载地址：<code>https://www.virtualbox.org/wiki/Downloads</code></p>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703100429090-1833603002.png" alt="image"></p>
+<p>2.按需选择系统版本安装，安装完成后启动。</p>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703100553673-193314765.png" alt="image"></p>
+<p>3.安装VirtualBox插件，双击下载文件即可安装</p>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703100513140-101344950.png" alt="image"></p>
+<h2 id="二、创建CentOS虚拟机"><a href="#二、创建CentOS虚拟机" class="headerlink" title="二、创建CentOS虚拟机"></a>二、创建CentOS虚拟机</h2><p>1.选择无界面版本，下载地址：<br><code>http://mirrors.jlu.edu.cn/centos/7.9.2009/isos/x86_64/CentOS-7-x86_64-Minimal-2009.iso</code></p>
+<p>2.虚拟机安装配置</p>
+<ul>
+<li>填写虚拟机名称，虚拟光盘选择下载的镜像文件，勾选【跳过自动安装】</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703100859123-353580792.png" alt="image"></p>
+<ul>
+<li>硬件：内存2G，处理器2核，不勾选【启用 EFI】</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703101209173-179445898.png" alt="image"></p>
+<ul>
+<li>虚拟硬盘默认分配20G，可按需修改</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703101257375-399453158.png" alt="image"></p>
+<ul>
+<li>最终配置，完成后启动虚拟机</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703101333304-366812837.png" alt="image"></p>
+<p>3.CentOS 7安装配置</p>
+<blockquote>
+<p>虚拟机释放键鼠的快捷键，右Ctrl（win），Option（mac），按1下就释放</p>
+</blockquote>
+<ul>
+<li>语言按需选择，英文&amp;中文</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703101853309-84401123.png" alt="image"></p>
+<ul>
+<li>确认安装位置，直接点完成</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703102042609-450678870.png" alt="image"></p>
+<ul>
+<li>开启网络链接，打开网卡开关，点击完成。</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703102129599-1466875003.png" alt="image"></p>
+<ul>
+<li>设置用户，本次只配置了root用户，按需创建角色</li>
+</ul>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703102729916-994200474.png" alt="image"></p>
+<ul>
+<li>安装进度完成后，点击重启</li>
+</ul>
+<p>4.进入CentOS 7，使用创建的root用户登录，安装常用模块</p>
+<ul>
+<li>安装常用的模块：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install bash-completion openssh-server net-tools vim wget git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看ssh服务是否启动，并且设置ssh开机自启动</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看ssh服务是否启动</span></span><br><span class="line">systemctl status sshd</span><br><span class="line"><span class="comment"># 设置ssh开机自启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> sshd</span><br></pre></td></tr></table></figure>
+
+<p>5.彻底关闭虚拟机，添加第二网卡，保存后启动虚拟机</p>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703104046487-943706331.png" alt="image"></p>
+<blockquote>
+<p>Mac系统可能没有 Host-Only 网卡，需要手动创建一个<br>选择网络，创建1个 仅主机（Host-Only）网络</p>
+</blockquote>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703233819006-258544610.png" alt="image"></p>
+<p>6.查看ip地址，执行命令 <code>ifconfig</code></p>
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703104337477-1551855560.png" alt="image"></p>
+<ul>
+<li><p>上图就是网卡2，ip地址是<code>192.168.56.104</code>，用此ip来访问CentOS</p>
+</li>
+<li><p>使用ssh连接，执行命令 <code>ssh root@192.168.56.104</code>，输入密码</p>
+</li>
+</ul>
+<h2 id="三、安装Node，mongoDB，Yapi"><a href="#三、安装Node，mongoDB，Yapi" class="headerlink" title="三、安装Node，mongoDB，Yapi"></a>三、安装Node，mongoDB，Yapi</h2><p>1.安装node（nvm方式）</p>
+<ul>
+<li>安装参考源地址：<code>https://gitee.com/RubyKids/nvm-cn</code>，执行安装命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://gitee.com/RubyKids/nvm-cn/raw/main/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装完成后重启虚拟机，执行命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装node，版本选择v12.22.12，执行命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install v12.22.12</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img2023.cnblogs.com/blog/3230649/202307/3230649-20230703110127324-862102616.png" alt="image"></p>
+<ul>
+<li>nvm常用命令参考，点击查看代码</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 列出所有可安装版本</span></span><br><span class="line">nvm ls-remote</span><br><span class="line"><span class="comment"># 安装某个版本Node</span></span><br><span class="line">nvm install lts/fermium</span><br><span class="line">nvm install v12.20.1</span><br><span class="line">nvm install v15.5.1</span><br><span class="line"><span class="comment"># 切换Node版本</span></span><br><span class="line">nvm use system</span><br><span class="line">nvm use 14.15    <span class="comment"># 不用全部打出版本号</span></span><br><span class="line"><span class="comment"># 更新nvm</span></span><br><span class="line">nvm-update</span><br></pre></td></tr></table></figure>
+
+<p>3.安装mongoDB，部署yapi，参考我的另一篇博文<a target="_blank" rel="noopener" href="https://www.cnblogs.com/super-ma/p/17512546.html">在Centos7上部署Yapi</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://hematodo.github.io">Hema</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hematodo.github.io/2023/09/20/VM%20VirtualBox%20+%20CentOS%207%20%E6%9C%AC%E5%9C%B0%E5%8C%96%E9%83%A8%E7%BD%B2yapi%E6%9C%8D%E5%8A%A1/">https://hematodo.github.io/2023/09/20/VM%20VirtualBox%20+%20CentOS%207%20%E6%9C%AC%E5%9C%B0%E5%8C%96%E9%83%A8%E7%BD%B2yapi%E6%9C%8D%E5%8A%A1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hematodo.github.io" target="_blank">Hey,Hema - Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/20/Python%20%E6%9B%B4%E6%94%B9pip%E6%BA%90/" title="Python更换pip源的办法"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Python更换pip源的办法</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/20/Windows%20python%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7pyenv/" title="windows下的python多环境pyenv-win搭建"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">windows下的python多环境pyenv-win搭建</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Hema</div><div class="author-info__description">心有所向，无问西东</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85Oracle-VM-VirtualBox"><span class="toc-number">1.</span> <span class="toc-text">一、安装Oracle VM VirtualBox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BACentOS%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="toc-number">2.</span> <span class="toc-text">二、创建CentOS虚拟机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AE%89%E8%A3%85Node%EF%BC%8CmongoDB%EF%BC%8CYapi"><span class="toc-number">3.</span> <span class="toc-text">三、安装Node，mongoDB，Yapi</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/20/Django%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9D%E8%AF%86Django/" title="Django笔记：初识Django">Django笔记：初识Django</a><time datetime="2023-09-20T10:27:14.000Z" title="发表于 2023-09-20 18:27:14">2023-09-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/20/Git%E5%90%8C%E6%97%B6%E9%85%8D%E7%BD%AEGitee%E5%92%8CGitHub/" title="Git同时配置Gitee和GitHub">Git同时配置Gitee和GitHub</a><time datetime="2023-09-20T10:27:14.000Z" title="发表于 2023-09-20 18:27:14">2023-09-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/20/Python%20%E6%9B%B4%E6%94%B9pip%E6%BA%90/" title="Python更换pip源的办法">Python更换pip源的办法</a><time datetime="2023-09-20T10:27:14.000Z" title="发表于 2023-09-20 18:27:14">2023-09-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/20/VM%20VirtualBox%20+%20CentOS%207%20%E6%9C%AC%E5%9C%B0%E5%8C%96%E9%83%A8%E7%BD%B2yapi%E6%9C%8D%E5%8A%A1/" title="Oracle VM VirtualBox + CentOS 7 本地化部署Yapi服务">Oracle VM VirtualBox + CentOS 7 本地化部署Yapi服务</a><time datetime="2023-09-20T10:27:14.000Z" title="发表于 2023-09-20 18:27:14">2023-09-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/09/20/Windows%20python%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7pyenv/" title="windows下的python多环境pyenv-win搭建">windows下的python多环境pyenv-win搭建</a><time datetime="2023-09-20T10:27:14.000Z" title="发表于 2023-09-20 18:27:14">2023-09-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Hema</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
